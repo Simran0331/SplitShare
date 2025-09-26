@@ -2,17 +2,6 @@ const model = require('../model/schema')
 const validator = require('../helper/validation')
 const logger = require('../helper/logger')
 const splitCalculator = require('../helper/split')
-
-/*
-Create Group Function This function basically create new groups
-Accepts: Group Name
-         Group Description:
-         Group Members
-         Currency Type:
-Validation: Group Name not empty
-            Group Members present in DB
-            Currency type INR, USD, EUR (for now)
-*/
 exports.createGroup = async (req, res) => {
     try {
         var newGroup = new model.Group(req.body)
